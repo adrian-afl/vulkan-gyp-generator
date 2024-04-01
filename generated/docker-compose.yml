@@ -1,0 +1,7 @@
+# this is to extract the data compiled by the docker image on build
+version: "3.9"
+services:
+  out:
+    image: vulkan-node-x11
+    volumes:
+      - "./:/out"

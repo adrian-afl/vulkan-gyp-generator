@@ -1,0 +1,24 @@
+{
+  "name": "vulkan-node-gyp",
+  "version": "1.0.0",
+  "main": "dist/dist.js",
+  "types": "dist/dist.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "rebuild": "node-gyp rebuild",
+    "clean": "node-gyp clean",
+    "configure": "node-gyp configure",
+    "build": "node-gyp build",
+    "postbuild": "tsc -P tsconfig.json && node afterBuild.js",
+    "postrebuild": "tsc -P tsconfig.json && node afterBuild.js"
+  },
+  "dependencies": {
+    "node-gyp": "^9.4.0",
+    "node-addon-api": "*",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}

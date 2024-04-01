@@ -1,0 +1,6 @@
+node_modules
+.idea
+/testoutdir/
+/gypstuff.7z
+/dist/
+/errortrace.log

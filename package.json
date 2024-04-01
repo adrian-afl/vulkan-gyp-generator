@@ -1,0 +1,40 @@
+{
+  "name": "parsing-vulkan",
+  "author": "Adrian Afl",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "dist/dist.js",
+  "types": "dist/dist.d.ts",
+  "dependencies": {
+    "aero-glsl-c": "^1.0.0",
+    "commander": "^11.0.0",
+    "fast-xml-parser": "^4.2.7",
+    "gl-matrix": "^3.4.3",
+    "lodash": "^4.17.21",
+    "png-ts": "^0.0.3",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "20.4.2",
+    "@typescript-eslint/eslint-plugin": "6.0.0",
+    "@typescript-eslint/parser": "6.0.0",
+    "eslint": "8.45.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "2.*",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "3.0.0",
+    "rimraf": "5.0.1",
+    "ts-node": "10.*",
+    "typescript": "5.1.6"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit -P tsconfig.json && eslint \"{src,examples}/**/*.ts\" --max-warnings=0",
+    "lint:fix": "tsc --noEmit -P tsconfig.json && eslint --fix \"{src,examples}/**/*.ts\"",
+    "build": "yarn lint && yarn rimraf dist && tsc -P tsconfig.build.json",
+    "cli": "ts-node src/cli.ts",
+    "cli:dist": "node dist/cli.js",
+    "glslc": "aero-glsl-c --dir examples/shaders"
+  }
+}
